@@ -2,7 +2,6 @@
 /**
  * @title Dig-A-Hash Demo NFT Contract Version 0.0.1
  * @author KidSysco @ Dig-A-Hash
- * @notice This is a test contract for the RINT NFT. 
  * This contract contains properties, and functions for use with the Dig-A-Hash API.
  * https://www.dig-a-hash.com
  */
