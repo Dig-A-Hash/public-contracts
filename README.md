@@ -1,8 +1,8 @@
 # Dig-A-Hash Public Contracts
 
-These are Solidity demo contracts in use by Dig-A-Hash to demonstrate the use of our platform. These contracts can also be used as a starting point for your own projects.
+These are Solidity demo contracts in use by Dig-A-Hash to demonstrate the use of our platform. These contracts can be used as a starting point for your own projects.
 
-These contracts have been fully tested and are primarily derived from the fully audited OpenZeppelin contracts.
+These contracts are derived from the fully audited OpenZeppelin contracts.
 
 ## Files
 
@@ -16,7 +16,7 @@ Connect with us at https://www.dig-a-hash.com for more information.
 
 ## Customizing the Contracts
 
-Create a copy of the contract you want to customize and rename file file. Use camel-casing for the file name and then change the contract name to match the file name. DigAHashDemo can be changed to any name you wish in the contract declaration.
+Create a copy of the contract you want to customize and rename the file. Use camel-casing for the file name and then change the contract name to match the file name. DigAHashDemo can be changed to any name you wish in the contract declaration.
 
 ```
 contract DigAHashDemo is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable,
@@ -34,9 +34,11 @@ The base URL must remain in order to use Dig-A-Hash's NFT Meta-Data services. Co
 string memory baseURI = "https://nft.dah-services.com/profiles/";
 ```
 
-## Compiling
+## Compiling and Deploying
 
 Remix and HardHat can both be used to compile the contracts for any EVM compatible blockchain.
+
+We have also tested deployment with these contracts in [HardHat](https://github.com/NomicFoundation/hardhat) and [Remix](https://remix.ethereum.org/).
 
 ## OpenZeppelin Docs
 
