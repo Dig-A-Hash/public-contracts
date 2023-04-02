@@ -4,7 +4,7 @@
 
 The Dig-A-Hash Demo NFT Contract Version 0.0.1. This contract is designed to be used with the Dig-A-Hash platform at https://www.dig-a-hash.com.
 
-This contract mints a fairly standard ERC721 token with most of the major features such as: minting, pausing, burning, transferring, and it includes automatic Meta-Data URI generation for use with the Dig-A-Hash Dynamic Meta-Data API.
+This contract mints a fairly standard ERC721 token with most of the major features such as: minting, pausing, burning, admin burning, and transferring. This contract also includes automatic Meta-Data URI generation, and other features for use with the Dig-A-Hash Dynamic Meta-Data API.
 
 This contract is a great starting point for those who want to mint their own General Purpose NFTs.
 
@@ -18,8 +18,12 @@ This contract uses the following contracts:
 - OpenZeppelin's Pausable.sol
 - OpenZeppelin's AccessControl.sol
 - OpenZeppelin's ERC721Burnable.sol
-- Public Functions
-- The following public functions are available in this contract:
+
+## Access Control
+
+The AccessControl contract used in these NFT contracts provides a built-in role-based access control mechanism, which allows us to specify which functions can be called by which roles. There are three roles defined: DEFAULT_ADMIN_ROLE, PAUSER_ROLE, and MINTER_ROLE.
+
+The DEFAULT_ADMIN_ROLE is the top-level role and has the power to grant and revoke roles from other addresses. The PAUSER_ROLE can pause and unpause the contract to prevent certain functions from being called in case of an emergency, while the MINTER_ROLE can only mint new tokens. These roles ensure that only authorized parties can perform critical functions in the contract, providing an added layer of security and control.
 
 # Public Functions
 
@@ -27,15 +31,15 @@ The following is a list of all public functions in the contract:
 
 ## constructor()
 
-Constructor function, which sets the contract name, symbol, and initializes the contract owner address, and URI path for generating meta-data.
+Constructor function, which sets the contract name, symbol, and initializes the contract owner address, and URI path for generating meta-data. The contract name and symbol values should be changed to suit your needs.
 
 ## adminBurn(uint256 tokenId)
 
-Function to burn a token. This function can only be called by the contract owner.
+Function to burn a token. This function can only be called by the contract owner. Contract owner's can burn any token they wish.
 
 ## pause()
 
-Function to pause the contract. This function can only be called by the contract owner.
+Function to pause the contract from minting, transferring, and burning. This function can only be called by the contract owner.
 
 ## unpause()
 
@@ -43,11 +47,11 @@ Function to unpause the contract. This function can only be called by the contra
 
 ## mint(address to)
 
-Function to mint a new token. This function generates a Dig-A-Hash token URI and mints the token using OZ \_safeMint.
+Function to mint a new token. This function generates a Dig-A-Hash token URI and mints the token using OZ safeMint technique.
 
 ## tokenURI(uint256 tokenId)
 
-Function to get the token URI for a given token. This function is overridden from the ERC721 and ERC721URIStorage standards.
+Function to get the token URI for a given token. This function is overridden from the ERC721 and ERC721URIStorage standards. This link should point to a Dig-A-Hash Dynamic Meta-Data API endpoint, and the link is automatically built by the contract at mint. You do not need to worry about setting the Meta-Data URI.
 
 ## burn(uint256 tokenId)
 
@@ -77,7 +81,7 @@ Function to get the total number of tokens that exist in the contract. This func
 
 Function to get the token ID of a specific token owned by an address at a given index. This function is inherited from the ERC721 and ERC721Enumerable standards. The owner address specified in the function call must be a valid Ethereum address, and the index specified must be a valid index of the tokens owned by the address (i.e., it must be less than the value returned by balanceOf(owner)). The function returns the token ID of the token at the specified index.
 
-# Internet Functions
+# Internal Functions
 
 The following is a list of internal functions added to the the contract to create the Dig-A-Hash Meta-Data URL based on the token ID, the contract address, the wallet address, and the chain ID.
 
