@@ -1,5 +1,7 @@
 # Dig-A-Hash Public Contracts
 
+[![built-with openzeppelin](https://img.shields.io/badge/built%20with-OpenZeppelin-3677FF)](https://docs.openzeppelin.com/)
+
 These are Solidity demo contracts in use by Dig-A-Hash to demonstrate the use of our platform. These contracts can be used as a starting point for your own projects.
 
 These contracts are derived from the fully audited OpenZeppelin contracts.

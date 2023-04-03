@@ -1,5 +1,7 @@
 # Dig-A-Hash Demo Payable Badge Contract Readme
 
+[![built-with openzeppelin](https://img.shields.io/badge/built%20with-OpenZeppelin-3677FF)](https://docs.openzeppelin.com/)
+
 ## Description
 
 Dig-A-Hash Demo Payable Badge Contract Version 0.0.1. This contract is designed to be used with the Dig-A-Hash platform at https://www.dig-a-hash.com.
