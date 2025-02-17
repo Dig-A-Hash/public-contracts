@@ -2330,7 +2330,7 @@ contract dahRev2om is ERC721, ERC721Enumerable, ERC721URIStorage, ERC721Pausable
         _grantRole(MINTER_ROLE, msg.sender);
         _contractOwnerAddress = msg.sender;
 
-        string memory baseURI = "https://nft.dah-services.com/profiles/";
+        string memory baseURI = "https://nft.dig-a-hash.com/profiles/";
         string memory walletContractUri = getWalletContractPath();
         _metaDataBasePath = string(abi.encodePacked(baseURI, walletContractUri));
     }
