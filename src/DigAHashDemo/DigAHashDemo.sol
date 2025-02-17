@@ -33,7 +33,7 @@ contract DigAHashDemo is ERC721, ERC721Enumerable, ERC721URIStorage, Pausable, A
         _grantRole(PAUSER_ROLE, msg.sender);
         _contractOwnerAddress = msg.sender;
 
-        string memory baseURI = "https://nft.dah-services.com/profiles/";
+        string memory baseURI = "https://nft.dig-a-hash.com/profiles/";
         string memory walletContractUri = getWalletContractPath();
         _metaDataBasePath = string(abi.encodePacked(baseURI, walletContractUri));
     }

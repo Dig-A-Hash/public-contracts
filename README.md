@@ -33,7 +33,7 @@ constructor() ERC721("Dig-A-Hash Public Demo", "DIGADEMO") {
 The base URL must remain in order to use Dig-A-Hash's NFT Meta-Data services. Contact us for custom domains.
 
 ```
-string memory baseURI = "https://nft.dah-services.com/profiles/";
+string memory baseURI = "https://nft.dig-a-hash.com/profiles/";
 ```
 
 ## Compiling and Deploying
